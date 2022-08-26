@@ -636,37 +636,25 @@ module.exports = {
 
                         } finally {
                             text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc ? String.fromCharCode(8206).repeat(4001) + groupMetadata.desc : '') :
-                                (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace(/@user/g, '@' + user.split`@`[0])
-                            let wel = API('hardianto', '/api/welcome3', {
+                                (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', await this.getName(user))
+                            let wel = API('males', '/welcome2', {
                                 profile: pp,
-                                name: await this.getName(user),
-                                bg: 'https://telegra.ph/file/a36809ab7862a77d18ac0.jpg',
-                                namegb: await this.getName(id),
-                                member: groupMetadata.participants.length
+                                username: await this.getName(user),
+                                background: 'https://telegra.ph/file/c538a6f5b0649a7861174.png',
+                                groupname: await this.getName(id),
+                                membercount: groupMetadata.participants.length
                             })
-                            let lea = API('hardianto', '/api/goodbye3', {
+                            let lea = API('males', '/goodbye2', {
                                 profile: pp,
-                                name: await this.getName(user),
-                                bg: 'https://telegra.ph/file/a36809ab7862a77d18ac0.jpg',
-                                namegb: await this.getName(id),
-                                member: groupMetadata.participants.length
+                                username: await this.getName(user),
+                                background: 'https://telegra.ph/file/c538a6f5b0649a7861174.png',
+                                groupname: await this.getName(id),
+                                membercount: groupMetadata.participants.length
                             })
-                            /*await this.send3TemplateButtonImg(id, action === 'add' ? wel : lea, text, wm, action === 'add' ? 'selamat datang' : 'sampai jumpa', action === 'add' ? '.intro' : 'FokusID')*/
-   await conn.sendButtonDoc(id, text, wm, action == 'add' ? 'selamat datang' : 'sampai jumpa', action === 'add' ? '.intro' : 'Cute IQ-MD', fkontak,{
-  contextInfo: {mentionedJid: [user],
-    externalAdReply :{
-    mediaUrl: linkyt,
-    mediaType: 2,
-    description: deslink , 
-    title: titlink,
-    body: wm,
-    thumbnail: await(await fetch(action === 'add' ? wel : lea)).buffer(),
-    sourceUrl: linkgc
-     }}
-  })
-                        }
-                    }
-                }
+                             await this.sendButtonLoc(id, await conn.resize(pp, 300, 200), text, wm, action === 'add' ? 'Selamat Datang' : 'Sampai Jumpa', action === 'add' ? '.intro' : '-')  
+                         } 
+                     } 
+                 }
                 break
 
             case 'promote':

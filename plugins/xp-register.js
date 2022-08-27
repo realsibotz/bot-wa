@@ -98,7 +98,7 @@ let judul = ''
       buttonText: "VERIFY",
       sections
     }
-  let user = global.db.data.users[m.sender]
+  let user = global.db.data.home[m.sender]
   if (user.registered === true) return conn.sendButtonDoc(m.chat, `@${m.sender.split`@`[0]} Kamu sudah terdaftar! mau daftar ulang?`, wm, 'Iya', '.unreg ' + sn, m, {
     quoted: fz,
     contextInfo: { forwardingScore: 99999, isForwarded: true,
@@ -126,7 +126,6 @@ let judul = ''
   user.registered = true
   let prefix = usedPrefix
 let hao = `
-
 *Registered In Database*
 *Supported By @${global.owner[0].split('@')[0]}*` 
   conn.sendButtonLoc(m.chat, await conn.resize(await (await fetch('https://telegra.ph/file/4a7e5f18efaadec18a7a0.jpg')).buffer(), 300, 200),  `
@@ -139,10 +138,11 @@ let hao = `
 
 *SN* (Serial Number) di kirim di chat pribadi dan digunakan untuk daftar ulang, jika lupa *SN* silahkan ketik *${usedPrefix}sn* untuk mengecek *SN* kamu! 
 `.trim(), wm, `Profile`,`${prefix}pp`, m) 
-conn.sendButtonLoc(m.sender, await conn.resize(await (await fetch(fla + 'Registered')).buffer(), 300, 200), `
+conn.sendButtonLoc(m.sender, await conn.resize(await (await fetch(fla + 'Registered')).buffer(), 300, 200), `Terimakasih Telah Daftar Di Data Base Bot
+
 *SN:* ${sn}
 
-ᴅᴀᴛᴀ ᴜsᴇʀ ʏᴀɴɢ ᴛᴇʀsɪᴍᴘᴀɴ ᴅɪᴅᴀᴛᴀʙᴀsᴇ ʙᴏᴛ, ᴅɪᴊᴀᴍɪɴ ᴀᴍᴀɴ ᴛᴀɴᴘᴀ ᴛᴇʀsʜᴀʀᴇ (. ❛ ᴗ ❛.)`, hao, `Profile`,`${prefix}pp`, m) 
+ᴅᴀᴛᴀ ᴜsᴇʀ ʏᴀɴɢ ᴛᴇʀsɪᴍᴘᴀɴ ᴅɪᴅᴀᴛᴀʙᴀsᴇ ʙᴏᴛ, ᴅɪᴊᴀᴍɪɴ ᴀᴍᴀɴ ᴛᴀɴᴘᴀ ᴛᴇʀsʜᴀʀᴇ (. ❛ ᴗ ❛.)`, hao, `SN`,`${prefix}sn`, m) 
    conn.verify = conn.verify ? conn.verify : {} 
     user = DATABASE.data.home 
     kode = Math.floor(Math.random() * 9999) 

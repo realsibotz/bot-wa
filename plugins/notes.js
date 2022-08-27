@@ -19,6 +19,9 @@ let handler = async (m, { conn }) => {
     }
     }
     }
+    let totalf = Object.values(global.plugins).filter(
+    (v) => v.help && v.tags
+  ).length;
 	let res = await fetch(global.API('https://api.github.com', '/search/repositories', {
         q: 'Ziv San Bot'
     }))
@@ -28,6 +31,7 @@ let handler = async (m, { conn }) => {
         return `Dibuat pada *${formatDate(repo.created_at)}*
 Terakhir Update Pada *${formatDate(repo.updated_at)}*
 
+💌 Total Fitur Bot Saat Ini: ${totalf}
 👁 Watchers : ${repo.watchers}   
 🍴 Forks : ${repo.forks} 
 ⭐ Start : ${repo.stargazers_count}
@@ -35,7 +39,7 @@ Terakhir Update Pada *${formatDate(repo.updated_at)}*
 *Deskripsi:*
 ${repo.description}`.trim()
     }).join('\n\n')
-await conn.sendButtonImg(m.chat, await (await fetch('https://botcahx-rest-api.herokuapp.com/api/tools/ssweb?link=https://github.com/Zivfurr/Furry-Bot/commit')).buffer(), zivsan, wm, 'Owner', '.owner', m, { quoted: fload, contextInfo: { 
+await conn.sendButtonImg(m.chat, await (await fetch('https://botcahx-rest-api.herokuapp.com/api/tools/ssweb?link=https://github.com/Zivfurr/Furry-Bot/commit')).buffer(), ' *──────「  Catatan Perubahan 」──────* ', zivsan, 'Owner', '.owner', m, { quoted: fload, contextInfo: { 
          externalAdReply: { showAdAttribution: true,
              title: 'Script Ini Update Secara Real Time Online',
              body: `${pickRandom(['Furry Indonesia :3', 'Suka Pokemon Nggak Kak :3', 'Kangen Ziv San Nggak?', 'Udah makan belum kak?', 'Udah Makan Belum?', 'Semangat ya kak!', 'Jangan begadang mulu ya!', 'Jangan spam ya kak!', 'Jangan lupa donasi yak kak! QωQ', 'Jaga kesehatan yaw kak!', 'Jangan lupa makan!', 'Jangan lupa istirahat yak! UωU', 'Ziv San Sayang Kamu :3', 'Pr nya udh belum kak?', 'Jangan kebanyakan main hp yk! nanti sakit :‹'])}`,

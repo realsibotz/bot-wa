@@ -6,13 +6,29 @@ let levelling = require('../lib/levelling')
  let jimp = require('jimp') 
  let PhoneNumber = require('awesome-phonenumber') 
  const defaultMenu = { 
-   before: `%readmore`.trim(),
-  header: `˚₊· ͟͟͞͞%category༉`, 
-   body: '◦ %cmd %islimit %isPremium', 
-   footer: '', 
-   after: `⌕ ❙❘❙❙❘❙❚❙❘❙❙❚❙❘❙❘❙❚❙❘❙❙❚❙❘❙❙❘❙❚❙❘ ⌕. 
+   before: `llı *USER*
+⬡ Name %name! 
+⬡ Tersisa  *%limit Limit* 
+⬡ Role  *%role* 
+⬡ Level  *%level (%exp / %maxexp)* 
+⬡ %xp4levelup
+⬡ %totalexp XP secara Total 
+  
+llı *TODAY*
+⬡ Tanggal:  *%week %weton, %date* 
+⬡ Tanggal Islam:  *%dateIslamic* 
+⬡ Waktu:  *%time* 
  
-*%me@^%version*
+llı *INFO BOT*
+⬡ Name Bot: *%me*
+⬡ Uptime:  *%uptime (%muptime)* 
+⬡ Database: %rtotalreg dari %totalreg 
+⬡ Memory Used :  *${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB* 
+%readmore`.trim(),
+  header: `˚₊· ͟͟͞͞%category ͟͟͞͞₊·˚`, 
+   body: '⸙͎۪۫  %cmd %islimit %isPremium', 
+   footer: '\n', 
+   after: `*⌕ %me@^%version*
 ${'```%npmdesc```'}
  `,
 }
@@ -372,7 +388,7 @@ return conn.send3ButtonLoc(m.chat, await conn.resize(pickRandom(global.waifu), 
        exp: exp - min, 
        maxexp: xp, 
        totalexp: exp, 
-       xp4levelup: max - exp <= 0 ? `Siap untuk *${_p}levelup*` : `${max - exp} XP lagi untuk levelup`, 
+       xp4levelup: max - exp <= 0 ? `Siap untuk  *${_p}levelup*` : `${max - exp} XP lagi untuk levelup`, 
        github: package.homepage ? package.homepage.url || package.homepage : '[unknown github url]', 
        level, limit, name, umur, money, age, weton, week, date, dateIslamic, time, totalreg, rtotalreg, role, 
        readmore: readMore 
@@ -394,7 +410,7 @@ return conn.send3ButtonLoc(m.chat, await conn.resize(pickRandom(global.waifu), 
       } 
      })*/
 //await conn.send3ButtonLoc(m.chat, await conn.resize(await (await fetch('https://api.xteam.xyz/textpro/glitch?text=' + teks + '&text2=CUTE%20IQ-MD%20BY%20ZIV%20SAN&APIKEY=bf8ff984af1506b7')).buffer(), 300, 200), '◈┈┉────[ *DASHBOARD* ]────┉┈◈' , text.trim(), 'Owner', '.owner', 'Donasi', '.donasi', 'Rules', '.rules', m)
-await conn.send2ButtonLoc(m.chat, await conn.resize(await (await fetch(flu + teks)).buffer(), 300, 200), text.trim(), `Aktif Selama : ${uptime}\n${week} ${date}\n${dateIslamic}`, 'Owner', `${_p}owner`, 'Donasi', `${_p}donasi`, m)
+await conn.send2ButtonLoc(m.chat, await conn.resize(await (await fetch(flu + teks)).buffer(), 300, 200), text.trim(), `▸ Ⓟ = for premium users.\n▸ Ⓛ = fitur berlimit.\n\nAktif Selama : ${uptime}\n${week} ${date}\n${dateIslamic}`, 'Owner', `${_p}owner`, 'Donasi', `${_p}donasi`, m)
 //await conn.send2ButtonImg(m.chat, await (await fetch(`${logos()}`)).buffer(), '──────────[ *DASHBOARD* ]──────────', text, 'OWNER', '.owner', '\n\nSAYA PEDO DAN SAYA BANGGA ꒪꒳꒪', 'a', fkon, { contextInfo: { forwardingScore: 999, isForwarded: true}})
 /*await conn.send2ButtonDoc(m.chat, '──────────[ *DASHBOARD* ]──────────', text, 'OWNER', '.owner', 'Rules', '.rules', m, { 
      quoted: ftoko, 

@@ -14,7 +14,7 @@ let fetch = require('node-fetch')
     surface : 404,
     message: `${ucapan()}`,
     orderTitle: `${ucapan()}`,
-    thumbnail: await conn.resize(await (await fetch('https://telegra.ph/file/3d150b20dbe58f043ca8b.jpg')).buffer(), 300, 200),  //Gambarnye
+    thumbnail: await conn.resize(await (await fetch('https://telegra.ph/file/722c4f76d65acb2f765b7.jpg')).buffer(), 300, 200),  //Gambarnye
     sellerJid: '0@s.whatsapp.net' 
     }
     }
@@ -31,7 +31,7 @@ let fetch = require('node-fetch')
                      "description": "Harap membaca Peraturan demi kenyamanan kita bersama", 
                      "rowId": `${usedPrefix}rules` 
                    }, { 
-                     "title": "Group Official Cute Bot", 
+                     "title": "Group Official Sano Bot", 
                      "description": "Gabung untuk mendapatkan informasi mengenai bot atau sekedar meramaikan", 
                      "rowId": `${usedPrefix}gcbot` 
                    }], 
@@ -58,7 +58,7 @@ Untuk fitur bot bisa baca menu sampai selesai ya kak, dicoba coba dulu biar tau 
 Silahkan hubungi owner ( Ketik *.owner* ) jika ingin menyewa bot untuk grup chat kalian
 
 ➠ Sewa (Join Grup) harga 5K / Permanent dan apabila bot di kick dari grup sengaja atau tidak sengaja tidak bisa di join kan lagi (Hangus).
-➠ Pembayaran saat ini hanya tersedia via Qris.
+➠ Pembayaran saat ini hanya tersedia via Dana.
 ➠ Proses transaksi seperti pada umumnya, chat owner terlebih dahulu untuk menanyakan nomor tujuan transfer setelah itu screenshot bukti pembayaran.
 ➠ *Penting!* simpan nomor owner dan join ke dalam grup official dibawah untuk mengetahui update nomor bot terbaru apabila ter-banned.
 ➠ Bot bisa di pindah pindah Grup (berlaku untuk yang sewa) kedalam grup lain (hanya 1 grup)

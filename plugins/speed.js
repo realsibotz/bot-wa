@@ -26,7 +26,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     surface : 1,
     message: `⚡ Speed ${await conn.getName(conn.user.jid)}`, 
     orderTitle: ``,
-    thumbnail: await (await fetch('https://telegra.ph/file/6e083ec916dce9821fc2e.jpg')).buffer(), //Gambarnye
+    thumbnail: await (await fetch('https://telegra.ph/file/722c4f76d65acb2f765b7.jpg')).buffer(), //Gambarnye
     sellerJid: '0@s.whatsapp.net' 
     }
     }
